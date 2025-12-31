@@ -1,35 +1,81 @@
-# Digitalbank Landing Page
+# Frontend Mentor - Digitalbank landing page solution
 
-Responsive marketing page for a fictional digital bank. Built from the supplied design assets with a focus on clean layout, hover/active states, and a functional mobile menu.
+This is a solution to the [Digitalbank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/digital-bank-landing-page-WaUhkoDN). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
-- Users see responsive layouts from mobile to desktop.
-- Navigation collapses into a hamburger menu with smooth open/close.
-- CTA buttons, navigation, and article links include hover/focus states.
-- Content and styles align with the provided design system (colors, typography, spacing).
+### The challenge
 
-## Tech & Approach
+Users should be able to:
 
-- Semantic HTML5 with accessible labels for interactive controls.
-- CSS custom properties, Flexbox, and CSS Grid for layout; gradient CTA styling.
-- Mobile-first responsiveness and sticky header for quick navigation.
-- Lightweight vanilla JS to toggle the mobile navigation state and lock body scroll.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
 
-## Running locally
+### Screenshot
 
-1. Clone the repo.
-2. Open `index.html` in your browser (no build step required).
+Add your screenshot: `./screenshot.jpg` (capture in your browser and drop it in the repo).
 
-## File guide
+### Links
 
-- `index.html` – page structure, hero/features/articles, footer, and nav markup.
-- `style.css` – design tokens, responsive layout rules, hover/active states.
-- `images/` – provided icons, backgrounds, and article/hero assets.
-- `design/` – reference JPGs for mobile/desktop and active states.
+- Solution URL: _Add solution URL here_
+- Live Site URL: _Add live site URL here_
 
-## Future ideas
+## My process
 
-- Add focus trap to the mobile menu for tighter accessibility.
-- Integrate a simple contact form with validation.
-- Swap inline background images for `picture`/`source` elements for finer art direction.
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Vanilla JavaScript for navigation, modal, FAQ, and validation
+
+### What I learned
+
+Key takeaways:
+
+- Building a responsive hero with layered `picture` + positioned mockups for art direction.
+- Managing mobile navigation with an accessible focus trap and scroll locking.
+- Structuring FAQ, testimonials, and pricing cards with reusable grid patterns.
+- Toggling themes using `data-theme` tokens and swapping assets (light/dark logo).
+
+```css
+[data-theme="dark"] .logo--light-bg {
+  display: none;
+}
+```
+
+### Continued development
+
+- Add analytics hooks for CTA interactions and FAQ opens.
+- Improve modal flow with async submit and loading states.
+- Refine testimonial slider with swipe/auto-play + reduced-motion support.
+
+### Useful resources
+
+- [MDN ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/) – helpful for focus management patterns.
+- [Josh Comeau: CSS Animations and prefers-reduced-motion](https://www.joshwcomeau.com/) – guidance on motion accessibility.
+
+## Author
+
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+
+## Acknowledgments
+
+Thanks to Frontend Mentor for the design brief and assets.
