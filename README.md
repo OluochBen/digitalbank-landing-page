@@ -7,7 +7,6 @@ This is a solution to the [Digitalbank landing page challenge on Frontend Mentor
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -27,12 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-Add your screenshot: `./screenshot.jpg` (capture in your browser and drop it in the repo).
-
-### Links
-
-- Solution URL: _Add solution URL here_
-- Live Site URL: _Add live site URL here_
+![Digitalbank screenshot](./images/screenshot4.png)
 
 ## My process
 
@@ -73,8 +67,8 @@ Key takeaways:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@OluochBen](https://www.frontendmentor.io/profile/OluochBen)
+- Twitter - [@Ben_Oluoch1](https://x.com/Ben_Oluoch1)
 
 ## Acknowledgments
 
