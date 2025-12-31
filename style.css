@@ -489,49 +489,55 @@ h3 {
 }
 
 .site-footer {
-  background: var(--blue-950);
+  background: #0b1423;
   color: var(--white);
-  padding: 3rem 0;
+  padding: 3.5rem 0;
 }
 
 .footer__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .footer__brand img {
-  width: 140px;
+  width: 150px;
   margin-bottom: 1.5rem;
 }
 
 .footer__social {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .footer__social a {
   display: inline-flex;
-  padding: 0.3rem;
-  border-radius: 4px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 12px;
   transition: background 0.2s ease, transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .footer__social a:hover,
 .footer__social a:focus-visible {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
 }
 
 .footer__links {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .footer__links a {
   color: var(--white);
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 1.05rem;
   transition: color 0.2s ease;
 }
 
@@ -547,6 +553,12 @@ h3 {
 .footer__cta p {
   margin-top: 1.5rem;
   color: var(--gray-100);
+}
+
+@media (min-width: 960px) {
+  .footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
 }
 
 .contact {
