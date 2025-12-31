@@ -829,6 +829,10 @@ body[data-theme="dark"] {
     display: block;
   }
 
+  .nav__actions {
+    gap: 0.5rem;
+  }
+
   .hero {
     padding-top: 0;
   }
@@ -879,6 +883,39 @@ body[data-theme="dark"] {
 
   .article__image {
     height: 200px;
+  }
+}
+
+@media (max-width: 720px) {
+  .section-heading {
+    text-align: center;
+    margin: 0 auto 2rem;
+  }
+
+  .pricing-grid,
+  .article-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing__card,
+  .testimonial,
+  .faq__item,
+  .contact__form,
+  .contact__details {
+    text-align: center;
+  }
+
+  .testimonial__controls {
+    justify-content: center;
+  }
+
+  .contact__grid {
+    gap: 1.5rem;
+  }
+
+  .contact__map {
+    height: 240px;
   }
 }
 .nav__actions .theme-toggle {
