@@ -373,11 +373,28 @@ h3 {
   color: var(--cyan-400);
 }
 
+[data-theme="dark"] .faq__question {
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] .faq__icon {
+  color: #7dd3fc;
+}
+
+[data-theme="dark"] .faq__question:hover .faq__icon,
+[data-theme="dark"] .faq__question:focus-visible .faq__icon {
+  color: #38bdf8;
+}
+
 .faq__answer {
   max-height: 0;
   overflow: hidden;
   color: var(--gray-600);
   transition: max-height 0.2s ease;
+}
+
+[data-theme="dark"] .faq__answer {
+  color: #cbd5e1;
 }
 
 .faq__answer--open {
