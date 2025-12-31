@@ -140,6 +140,18 @@ h3 {
   gap: 0.75rem;
 }
 
+.nav__actions .icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .nav__actions .icon-moon {
+  display: inline;
+}
+
+[data-theme="dark"] .nav__actions .icon-sun {
+  display: none;
+}
+
 .nav__links a {
   position: relative;
   font-size: 0.95rem;
@@ -652,30 +664,82 @@ h3 {
 }
 
 [data-theme="dark"] {
-  --blue-950: #0f172a;
+  --blue-950: #e5e7eb;
   --gray-600: #cbd5e1;
   --gray-100: #1e293b;
   --gray-50: #0b1220;
   --white: #0f172a;
-  background: var(--gray-50);
-  color: #e2e8f0;
+  background: #0b1220;
+  color: #e5e7eb;
 }
 
 body[data-theme="dark"] {
-  background: var(--gray-50);
-  color: #e2e8f0;
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .article__author,
+[data-theme="dark"] .contact__details,
+[data-theme="dark"] .form-status,
+[data-theme="dark"] .section-heading p {
+  color: #cbd5e1;
 }
 
 [data-theme="dark"] .card,
 [data-theme="dark"] .site-header,
 [data-theme="dark"] .modal__content {
   background: #111827;
-  color: #e2e8f0;
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] .nav__links a {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .nav__links a:hover,
+[data-theme="dark"] .nav__links a:focus-visible {
+  color: #fff;
 }
 
 [data-theme="dark"] .button--ghost {
-  color: #e2e8f0;
+  color: #e5e7eb;
   border-color: #334155;
+}
+
+[data-theme="dark"] .articles,
+[data-theme="dark"] .features,
+[data-theme="dark"] .pricing,
+[data-theme="dark"] .faq,
+[data-theme="dark"] .testimonials,
+[data-theme="dark"] .contact {
+  background: #0f172a;
+}
+
+[data-theme="dark"] .site-footer {
+  background: #0f172a;
+}
+
+[data-theme="dark"] .testimonial__quote {
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] .contact__map {
+  border-color: #334155;
+}
+
+[data-theme="dark"] .nav__actions .icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .nav__actions .icon-moon {
+  display: inline;
 }
 
 .no-scroll {
@@ -786,4 +850,11 @@ body[data-theme="dark"] {
   .article__image {
     height: 200px;
   }
+}
+.nav__actions .theme-toggle {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
 }
