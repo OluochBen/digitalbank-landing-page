@@ -44,7 +44,10 @@
           <a class="button button--primary" href="#cta">Request Invite</a>
         </div>
         <div class="hero__visual" aria-hidden="true">
-          <div class="hero__background"></div>
+          <picture class="hero__background">
+            <source media="(max-width: 960px)" srcset="images/bg-intro-mobile.svg">
+            <img src="images/bg-intro-desktop.svg" alt="">
+          </picture>
           <img src="images/image-mockups.png" alt="" class="hero__mockups">
         </div>
       </div>
@@ -103,7 +106,9 @@
         </div>
         <div class="article-grid">
           <article class="card article">
-            <div class="article__image" style="background-image: url('images/image-currency.jpg');"></div>
+            <picture class="article__image">
+              <img src="images/image-currency.jpg" alt="Currency and coins">
+            </picture>
             <div class="article__body">
               <p class="article__author">By Claire Robinson</p>
               <h3><a href="#blog">Receive money in any currency with no fees</a></h3>
@@ -114,7 +119,9 @@
             </div>
           </article>
           <article class="card article">
-            <div class="article__image" style="background-image: url('images/image-restaurant.jpg');"></div>
+            <picture class="article__image">
+              <img src="images/image-restaurant.jpg" alt="Restaurant table with food">
+            </picture>
             <div class="article__body">
               <p class="article__author">By Wilson Hutton</p>
               <h3><a href="#blog">Treat yourself without worrying about money</a></h3>
@@ -125,7 +132,9 @@
             </div>
           </article>
           <article class="card article">
-            <div class="article__image" style="background-image: url('images/image-plane.jpg');"></div>
+            <picture class="article__image">
+              <img src="images/image-plane.jpg" alt="Plane wing above clouds">
+            </picture>
             <div class="article__body">
               <p class="article__author">By Wilson Hutton</p>
               <h3><a href="#blog">Take your Digitalbank card wherever you go</a></h3>
@@ -136,7 +145,9 @@
             </div>
           </article>
           <article class="card article">
-            <div class="article__image" style="background-image: url('images/image-confetti.jpg');"></div>
+            <picture class="article__image">
+              <img src="images/image-confetti.jpg" alt="People celebrating with confetti">
+            </picture>
             <div class="article__body">
               <p class="article__author">By Claire Robinson</p>
               <h3><a href="#blog">Our invite-only Beta accounts are now live!</a></h3>
@@ -149,9 +160,37 @@
         </div>
       </div>
     </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact__grid">
+        <div class="section-heading">
+          <h2>Get in touch</h2>
+          <p>Questions or feedback? Drop your details and our team will respond shortly.</p>
+        </div>
+        <form id="contact-form" novalidate class="card contact__form">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required>
+            <small class="error" aria-live="polite"></small>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+            <small class="error" aria-live="polite"></small>
+          </label>
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="4" required></textarea>
+            <small class="error" aria-live="polite"></small>
+          </label>
+          <button type="submit" class="button button--primary">Send message</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer" id="contact">
+  <footer class="site-footer">
     <div class="container footer__grid">
       <div class="footer__brand">
         <img src="images/logo-light.svg" alt="Digitalbank">
@@ -189,12 +228,117 @@
     const navToggle = document.querySelector('.nav__toggle');
     const navMenu = document.querySelector('#nav-menu');
     const body = document.body;
+    const focusableSelector = 'a, button';
+    let trapListener = null;
+
+    const setFocusTrap = (enabled) => {
+      if (enabled) {
+        const focusableItems = Array.from(navMenu.querySelectorAll('a'));
+        const toggle = navToggle;
+        const ordered = [toggle, ...focusableItems];
+
+        trapListener = (event) => {
+          const { key, shiftKey } = event;
+          if (key === 'Escape') {
+            toggleMenu(false);
+            toggle.focus();
+            return;
+          }
+          if (key !== 'Tab' || ordered.length === 0) return;
+          const first = ordered[0];
+          const last = ordered[ordered.length - 1];
+          const active = document.activeElement;
+
+          if (!shiftKey && active === last) {
+            event.preventDefault();
+            first.focus();
+          } else if (shiftKey && (active === first || active === toggle)) {
+            event.preventDefault();
+            last.focus();
+          }
+        };
+
+        document.addEventListener('keydown', trapListener);
+      } else if (trapListener) {
+        document.removeEventListener('keydown', trapListener);
+        trapListener = null;
+      }
+    };
+
+    const toggleMenu = (open) => {
+      navToggle.setAttribute('aria-expanded', String(open));
+      navMenu.classList.toggle('nav__links--open', open);
+      body.classList.toggle('no-scroll', open);
+      setFocusTrap(open);
+    };
 
     navToggle.addEventListener('click', () => {
       const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      navMenu.classList.toggle('nav__links--open');
-      body.classList.toggle('no-scroll');
+      toggleMenu(!isOpen);
+    });
+
+    navMenu.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A') {
+        toggleMenu(false);
+      }
+    });
+
+    const form = document.querySelector('#contact-form');
+    const statusEl = form?.querySelector('.form-status');
+
+    const validateField = (field) => {
+      const value = field.value.trim();
+      const errorEl = field.parentElement.querySelector('.error');
+      let message = '';
+
+      if (field.name === 'name' && !value) {
+        message = 'Please enter your name.';
+      } else if (field.name === 'email') {
+        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        if (!value) {
+          message = 'Email is required.';
+        } else if (!emailPattern.test(value)) {
+          message = 'Enter a valid email address.';
+        }
+      } else if (field.name === 'message' && value.length < 10) {
+        message = 'Message should be at least 10 characters.';
+      }
+
+      if (message) {
+        field.classList.add('input-error');
+      } else {
+        field.classList.remove('input-error');
+      }
+
+      if (errorEl) {
+        errorEl.textContent = message;
+      }
+
+      return !message;
+    };
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      statusEl.textContent = '';
+
+      const fields = Array.from(form.querySelectorAll('input, textarea'));
+      const isValid = fields.every(validateField);
+
+      if (isValid) {
+        form.reset();
+        statusEl.textContent = 'Thanks! Your message has been received.';
+      } else {
+        statusEl.textContent = 'Please fix the errors above.';
+      }
+    });
+
+    form?.querySelectorAll('input, textarea').forEach((field) => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => {
+        if (field.classList.contains('input-error')) {
+          validateField(field);
+        }
+      });
     });
   </script>
 </body>
