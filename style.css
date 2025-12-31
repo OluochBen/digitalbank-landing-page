@@ -813,6 +813,11 @@ body[data-theme="dark"] {
   }
 
   .nav__actions {
+    margin-left: 0;
+    gap: 0.4rem;
+  }
+
+  .nav__toggle {
     margin-left: auto;
   }
 
