@@ -305,12 +305,11 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
   align-items: start;
-  align-content: center;
 }
 
 .footer__brand img {
   width: 140px;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer__social {
@@ -334,7 +333,6 @@ h3 {
 .footer__links {
   display: grid;
   gap: 0.5rem;
-  justify-items: center;
 }
 
 .footer__links a {
@@ -349,7 +347,7 @@ h3 {
 }
 
 .footer__cta {
-  text-align: center;
+  text-align: right;
 }
 
 .footer__cta p {
