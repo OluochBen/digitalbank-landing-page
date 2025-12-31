@@ -383,7 +383,8 @@ h3 {
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.field select {
   width: 100%;
   padding: 0.8rem 1rem;
   border-radius: 6px;
@@ -395,7 +396,8 @@ h3 {
 }
 
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   border-color: var(--cyan-400);
   box-shadow: 0 0 0 3px rgba(0, 195, 255, 0.15);
   outline: none;
@@ -416,6 +418,22 @@ h3 {
   margin: 0;
   color: var(--blue-950);
   font-weight: 600;
+}
+
+.contact__details {
+  padding-left: 1rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.contact__details li {
+  margin-bottom: 0.35rem;
+}
+
+.contact__note {
+  color: var(--gray-600);
+  font-size: 0.95rem;
 }
 
 .attribution {

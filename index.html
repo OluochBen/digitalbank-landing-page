@@ -166,8 +166,26 @@
         <div class="section-heading">
           <h2>Get in touch</h2>
           <p>Questions or feedback? Drop your details and our team will respond shortly.</p>
+          <ul class="contact__details">
+            <li><strong>Email:</strong> support@digitalbank.com</li>
+            <li><strong>Phone:</strong> +1 (800) 555-0199</li>
+            <li><strong>Hours:</strong> Mon–Fri, 8:00–18:00</li>
+            <li><strong>Response time:</strong> Usually within one business day</li>
+          </ul>
+          <p class="contact__note">Prefer social? Reach us via the icons below or the in-app chat.</p>
         </div>
         <form id="contact-form" novalidate class="card contact__form">
+          <label class="field">
+            <span>Topic</span>
+            <select name="topic" required>
+              <option value="">Choose a topic</option>
+              <option>General question</option>
+              <option>Product feedback</option>
+              <option>Partnership</option>
+              <option>Press</option>
+            </select>
+            <small class="error" aria-live="polite"></small>
+          </label>
           <label class="field">
             <span>Name</span>
             <input type="text" name="name" autocomplete="name" required>
@@ -293,6 +311,8 @@
 
       if (field.name === 'name' && !value) {
         message = 'Please enter your name.';
+      } else if (field.name === 'topic' && !value) {
+        message = 'Choose a topic so we can route your request.';
       } else if (field.name === 'email') {
         const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
         if (!value) {
