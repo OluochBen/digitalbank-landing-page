@@ -718,12 +718,15 @@ body[data-theme="dark"] {
 [data-theme="dark"] .pricing,
 [data-theme="dark"] .faq,
 [data-theme="dark"] .testimonials,
-[data-theme="dark"] .contact {
+[data-theme="dark"] .contact,
+[data-theme="dark"] .pricing,
+[data-theme="dark"] .articles,
+[data-theme="dark"] .features {
   background: #0f172a;
 }
 
 [data-theme="dark"] .site-footer {
-  background: #0f172a;
+  background: #0b1220;
 }
 
 [data-theme="dark"] .testimonial__quote {
@@ -857,4 +860,23 @@ body[data-theme="dark"] {
   align-items: center;
   justify-content: center;
   min-width: 44px;
+}
+[data-theme="dark"] .footer__links a,
+[data-theme="dark"] .footer__social a img {
+  filter: brightness(1.2);
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] .footer__links a:hover,
+[data-theme="dark"] .footer__links a:focus-visible {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .faq__item {
+  background: #111827;
+  border: 1px solid #1f2937;
+}
+
+[data-theme="dark"] .faq__answer {
+  color: #cbd5e1;
 }
