@@ -359,7 +359,9 @@ h3 {
 
 @media (max-width: 960px) {
   .nav {
-    grid-template-columns: auto auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .nav__links {
