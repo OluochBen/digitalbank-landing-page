@@ -11,6 +11,7 @@
   <title>Digitalbank | Landing Page</title>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container nav">
       <div class="nav__brand">
@@ -28,12 +29,15 @@
         <a href="#blog">Blog</a>
         <a href="#careers">Careers</a>
       </nav>
-      <a class="button button--primary nav__cta" href="#cta">Request Invite</a>
+      <div class="nav__actions">
+        <button class="button button--ghost theme-toggle" type="button" aria-label="Toggle theme">Toggle theme</button>
+        <a class="button button--primary nav__cta track-cta js-open-invite" href="#cta">Request Invite</a>
+      </div>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
+  <main id="main-content">
+    <section class="hero" id="home">
       <div class="container hero__grid">
         <div class="hero__content">
           <h1>Next generation digital banking</h1>
@@ -41,14 +45,14 @@
             Take your financial life online. Your Digitalbank account will be a one-stop-shop
             for spending, saving, budgeting, investing, and much more.
           </p>
-          <a class="button button--primary" href="#cta">Request Invite</a>
+          <a class="button button--primary track-cta js-open-invite" href="#cta">Request Invite</a>
         </div>
         <div class="hero__visual" aria-hidden="true">
           <picture class="hero__background">
             <source media="(max-width: 960px)" srcset="images/bg-intro-mobile.svg">
-            <img src="images/bg-intro-desktop.svg" alt="">
+            <img src="images/bg-intro-desktop.svg" alt="" loading="lazy">
           </picture>
-          <img src="images/image-mockups.png" alt="" class="hero__mockups">
+          <img src="images/image-mockups.png" alt="" class="hero__mockups" loading="lazy">
         </div>
       </div>
     </section>
@@ -161,6 +165,113 @@
       </div>
     </section>
 
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Plans for every stage</h2>
+          <p>Choose the plan that fits your journey. Upgrade or downgrade anytime.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="card pricing__card">
+            <div class="pricing__label">Starter</div>
+            <div class="pricing__price">$0<span>/mo</span></div>
+            <ul>
+              <li>Instant transfers</li>
+              <li>Virtual and physical cards</li>
+              <li>Budget alerts</li>
+            </ul>
+            <button class="button button--primary js-open-invite track-cta" type="button">Choose Starter</button>
+          </article>
+          <article class="card pricing__card pricing__card--highlight">
+            <div class="pricing__label">Growth</div>
+            <div class="pricing__price">$12<span>/mo</span></div>
+            <ul>
+              <li>Higher limits</li>
+              <li>Shared vaults</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="button button--primary js-open-invite track-cta" type="button">Choose Growth</button>
+          </article>
+          <article class="card pricing__card">
+            <div class="pricing__label">Scale</div>
+            <div class="pricing__price">Let’s talk</div>
+            <ul>
+              <li>Dedicated manager</li>
+              <li>Custom controls</li>
+              <li>API-first workflows</li>
+            </ul>
+            <button class="button button--primary js-open-invite track-cta" type="button">Contact sales</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What our customers say</h2>
+        </div>
+        <div class="testimonial__viewport">
+          <div class="testimonial__track">
+            <article class="card testimonial" data-index="0">
+              <p class="testimonial__quote">“Digitalbank keeps me on budget without feeling restrictive.”</p>
+              <p class="testimonial__author">— Amina, Nairobi</p>
+            </article>
+            <article class="card testimonial" data-index="1">
+              <p class="testimonial__quote">“Travel fees disappeared and the app is effortless.”</p>
+              <p class="testimonial__author">— Liam, London</p>
+            </article>
+            <article class="card testimonial" data-index="2">
+              <p class="testimonial__quote">“Shared vaults make family expenses transparent.”</p>
+              <p class="testimonial__author">— Priya, Mumbai</p>
+            </article>
+          </div>
+          <div class="testimonial__controls">
+            <button type="button" class="button button--ghost js-testimonial-prev" aria-label="Previous testimonial">‹</button>
+            <button type="button" class="button button--ghost js-testimonial-next" aria-label="Next testimonial">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently asked questions</h2>
+          <p>Quick answers about accounts, cards, and security.</p>
+        </div>
+        <div class="faq__list">
+          <article class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              How fast can I open an account?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              Most customers onboard in under 5 minutes with digital KYC.
+            </div>
+          </article>
+          <article class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              Do you charge foreign transaction fees?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              No FX fees on card purchases abroad; ATM fees vary by network.
+            </div>
+          </article>
+          <article class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              Can I share accounts with family or teams?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              Yes—create shared vaults, set roles, and approve spend in real time.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <div class="container contact__grid">
         <div class="section-heading">
@@ -168,11 +279,14 @@
           <p>Questions or feedback? Drop your details and our team will respond shortly.</p>
           <ul class="contact__details">
             <li><strong>Email:</strong> support@digitalbank.com</li>
-            <li><strong>Phone:</strong> +254 700 000 000</li>
+            <li><strong>Phone:</strong> +1 (800) 555-0199</li>
             <li><strong>Head office:</strong> 7th Floor, Westlands Hub, Waiyaki Way, Nairobi, Kenya</li>
             <li><strong>Nairobi postal:</strong> P.O. Box 5678-00100, Nairobi, Kenya</li>
             <li><strong>Hours:</strong> Mon–Fri, 8:00–18:00 (Nairobi, EAT)</li>
+            <li><strong>Business base:</strong> Nairobi operations hub</li>
           </ul>
+          <div class="contact__map" role="img" aria-label="Map showing Nairobi headquarters"></div>
+          <a class="button button--ghost" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ADigitalbank%20Support%0AORG%3ADigitalbank%0ATEL%3BTYPE%3Dwork%3A%2B1%20%28800%29%20555-0199%0AEMAIL%3BTYPE%3Dwork%3Asupport%40digitalbank.com%0AADR%3BTYPE%3Dwork%3A%3B%3B7th%20Floor%2C%20Westlands%20Hub%3B%3BNairobi%3B%3B00100%3BKenya%0AEND%3AVCARD" download="digitalbank-contact.vcf">Download vCard</a>
         </div>
         <form id="contact-form" novalidate class="card contact__form">
           <label class="field">
@@ -231,50 +345,111 @@
         <a href="#privacy">Privacy Policy</a>
       </div>
       <div class="footer__cta" id="cta">
-        <a class="button button--primary" href="#home">Request Invite</a>
+        <a class="button button--primary track-cta js-open-invite" href="#home">Request Invite</a>
         <p class="footer__copyright">© Digitalbank. All Rights Reserved</p>
       </div>
     </div>
   </footer>
 
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="invite-title">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close invite form">×</button>
+      <h2 id="invite-title">Request an invite</h2>
+      <form id="invite-form" novalidate class="modal__form">
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="invite-name" required>
+          <small class="error" aria-live="polite"></small>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="invite-email" required>
+          <small class="error" aria-live="polite"></small>
+        </label>
+        <label class="field">
+          <span>Plan</span>
+          <select name="invite-plan" required>
+            <option value="">Choose a plan</option>
+            <option>Starter</option>
+            <option>Growth</option>
+            <option>Scale</option>
+          </select>
+          <small class="error" aria-live="polite"></small>
+        </label>
+        <button type="submit" class="button button--primary">Submit request</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
   <script>
+
     const navToggle = document.querySelector('.nav__toggle');
     const navMenu = document.querySelector('#nav-menu');
     const body = document.body;
-    const focusableSelector = 'a, button';
-    let trapListener = null;
+    const themeToggle = document.querySelector('.theme-toggle');
+    const modal = document.querySelector('.modal');
+    const modalBackdrop = document.querySelector('.modal__backdrop');
+    const modalClose = document.querySelector('.modal__close');
+    const inviteForm = document.querySelector('#invite-form');
+    const contactForm = document.querySelector('#contact-form');
+    const testimonialTrack = document.querySelector('.testimonial__track');
+    const testimonials = Array.from(document.querySelectorAll('.testimonial'));
+    const faqButtons = Array.from(document.querySelectorAll('.faq__question'));
+    const ctaButtons = Array.from(document.querySelectorAll('.track-cta'));
+    const openInviteButtons = Array.from(document.querySelectorAll('.js-open-invite'));
+    const testimonialPrev = document.querySelector('.js-testimonial-prev');
+    const testimonialNext = document.querySelector('.js-testimonial-next');
 
-    const setFocusTrap = (enabled) => {
+    let navTrapListener = null;
+    let modalTrapListener = null;
+    let activeTestimonial = 0;
+
+    const setTheme = (mode) => {
+      body.dataset.theme = mode;
+      localStorage.setItem('db-theme', mode);
+    };
+
+    const initTheme = () => {
+      const stored = localStorage.getItem('db-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(stored || (prefersDark ? 'dark' : 'light'));
+    };
+
+    const toggleTheme = () => {
+      const current = body.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(current);
+    };
+
+    const setNavTrap = (enabled) => {
       if (enabled) {
         const focusableItems = Array.from(navMenu.querySelectorAll('a'));
-        const toggle = navToggle;
-        const ordered = [toggle, ...focusableItems];
+        const ordered = [navToggle, ...focusableItems];
 
-        trapListener = (event) => {
+        navTrapListener = (event) => {
           const { key, shiftKey } = event;
           if (key === 'Escape') {
             toggleMenu(false);
-            toggle.focus();
+            navToggle.focus();
             return;
           }
-          if (key !== 'Tab' || ordered.length === 0) return;
+          if (key !== 'Tab') return;
           const first = ordered[0];
           const last = ordered[ordered.length - 1];
           const active = document.activeElement;
-
           if (!shiftKey && active === last) {
             event.preventDefault();
             first.focus();
-          } else if (shiftKey && (active === first || active === toggle)) {
+          } else if (shiftKey && (active === first || active === navToggle)) {
             event.preventDefault();
             last.focus();
           }
         };
-
-        document.addEventListener('keydown', trapListener);
-      } else if (trapListener) {
-        document.removeEventListener('keydown', trapListener);
-        trapListener = null;
+        document.addEventListener('keydown', navTrapListener);
+      } else if (navTrapListener) {
+        document.removeEventListener('keydown', navTrapListener);
+        navTrapListener = null;
       }
     };
 
@@ -282,34 +457,81 @@
       navToggle.setAttribute('aria-expanded', String(open));
       navMenu.classList.toggle('nav__links--open', open);
       body.classList.toggle('no-scroll', open);
-      setFocusTrap(open);
+      setNavTrap(open);
     };
 
-    navToggle.addEventListener('click', () => {
+    navToggle?.addEventListener('click', () => {
       const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
       toggleMenu(!isOpen);
     });
 
-    navMenu.addEventListener('click', (event) => {
+    navMenu?.addEventListener('click', (event) => {
       if (event.target.tagName === 'A') {
         toggleMenu(false);
       }
     });
 
-    const form = document.querySelector('#contact-form');
-    const statusEl = form?.querySelector('.form-status');
+    const focusTrap = (container, enabled, onEscape) => {
+      const focusable = container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (enabled) {
+        modalTrapListener = (event) => {
+          const { key, shiftKey } = event;
+          if (key === 'Escape') {
+            onEscape?.();
+            return;
+          }
+          if (key !== 'Tab' || !focusable.length) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          const active = document.activeElement;
+          if (!shiftKey && active === last) {
+            event.preventDefault();
+            first.focus();
+          } else if (shiftKey && active === first) {
+            event.preventDefault();
+            last.focus();
+          }
+        };
+        document.addEventListener('keydown', modalTrapListener);
+      } else if (modalTrapListener) {
+        document.removeEventListener('keydown', modalTrapListener);
+        modalTrapListener = null;
+      }
+    };
+
+    const toggleModal = (open) => {
+      modal.classList.toggle('modal--open', open);
+      body.classList.toggle('no-scroll', open);
+      if (open) {
+        focusTrap(modal, true, () => toggleModal(false));
+        const firstField = modal.querySelector('input, select, button');
+        firstField?.focus();
+      } else {
+        focusTrap(modal, false);
+      }
+    };
+
+    openInviteButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleModal(true);
+      });
+    });
+
+    modalBackdrop?.addEventListener('click', () => toggleModal(false));
+    modalClose?.addEventListener('click', () => toggleModal(false));
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const validateField = (field) => {
       const value = field.value.trim();
       const errorEl = field.parentElement.querySelector('.error');
       let message = '';
-
-      if (field.name === 'name' && !value) {
+      if ((field.name === 'name' || field.name === 'invite-name') && !value) {
         message = 'Please enter your name.';
-      } else if (field.name === 'topic' && !value) {
-        message = 'Choose a topic so we can route your request.';
-      } else if (field.name === 'email') {
-        const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      } else if ((field.name === 'topic' || field.name === 'invite-plan') && !value) {
+        message = 'Choose an option so we can route your request.';
+      } else if ((field.name === 'email' || field.name === 'invite-email')) {
         if (!value) {
           message = 'Email is required.';
         } else if (!emailPattern.test(value)) {
@@ -319,42 +541,76 @@
         message = 'Message should be at least 10 characters.';
       }
 
-      if (message) {
-        field.classList.add('input-error');
-      } else {
-        field.classList.remove('input-error');
-      }
-
-      if (errorEl) {
-        errorEl.textContent = message;
-      }
-
+      field.classList.toggle('input-error', Boolean(message));
+      if (errorEl) errorEl.textContent = message;
       return !message;
     };
 
-    form?.addEventListener('submit', (event) => {
-      event.preventDefault();
-      statusEl.textContent = '';
+    const handleForm = (form) => {
+      const statusEl = form.querySelector('.form-status');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        statusEl.textContent = '';
+        const fields = Array.from(form.querySelectorAll('input, textarea, select'));
+        const isValid = fields.every(validateField);
+        if (isValid) {
+          form.reset();
+          statusEl.textContent = 'Thanks! Your message has been received.';
+          if (form.id === 'invite-form') {
+            toggleModal(false);
+          }
+        } else {
+          statusEl.textContent = 'Please fix the errors above.';
+        }
+      });
 
-      const fields = Array.from(form.querySelectorAll('input, textarea'));
-      const isValid = fields.every(validateField);
+      form.querySelectorAll('input, textarea, select').forEach((field) => {
+        field.addEventListener('blur', () => validateField(field));
+        field.addEventListener('input', () => {
+          if (field.classList.contains('input-error')) validateField(field);
+        });
+      });
+    };
 
-      if (isValid) {
-        form.reset();
-        statusEl.textContent = 'Thanks! Your message has been received.';
-      } else {
-        statusEl.textContent = 'Please fix the errors above.';
-      }
-    });
+    inviteForm && handleForm(inviteForm);
+    contactForm && handleForm(contactForm);
 
-    form?.querySelectorAll('input, textarea').forEach((field) => {
-      field.addEventListener('blur', () => validateField(field));
-      field.addEventListener('input', () => {
-        if (field.classList.contains('input-error')) {
-          validateField(field);
+    faqButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        faqButtons.forEach((b) => b.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.faq__answer').forEach((ans) => ans.classList.remove('faq__answer--open'));
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('faq__answer--open');
         }
       });
     });
+
+    const updateTestimonials = () => {
+      if (!testimonialTrack) return;
+      const offset = -activeTestimonial * 100;
+      testimonialTrack.style.transform = `translateX(${offset}%)`;
+    };
+
+    testimonialPrev?.addEventListener('click', () => {
+      activeTestimonial = (activeTestimonial - 1 + testimonials.length) % testimonials.length;
+      updateTestimonials();
+    });
+
+    testimonialNext?.addEventListener('click', () => {
+      activeTestimonial = (activeTestimonial + 1) % testimonials.length;
+      updateTestimonials();
+    });
+
+    ctaButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        console.log('CTA clicked', btn.textContent.trim());
+      });
+    });
+
+    themeToggle?.addEventListener('click', toggleTheme);
+    initTheme();
   </script>
 </body>
 </html>

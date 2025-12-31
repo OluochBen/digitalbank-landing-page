@@ -24,6 +24,21 @@ body {
   background: var(--gray-50);
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--gradient);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  z-index: 30;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -80,6 +95,12 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.button--ghost {
+  background: transparent;
+  color: var(--blue-950);
+  border: 1px solid var(--gray-100);
+}
+
 .button:hover,
 .button:focus-visible {
   opacity: 0.85;
@@ -111,6 +132,12 @@ h3 {
   align-items: center;
   gap: 1.5rem;
   justify-content: center;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .nav__links a {
@@ -145,6 +172,11 @@ h3 {
 
 .nav__cta {
   justify-self: end;
+}
+
+.nav__actions .theme-toggle {
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
 }
 
 .nav__toggle {
@@ -209,6 +241,136 @@ h3 {
   position: absolute;
   inset: -8% -20% 0 auto;
   width: 120%;
+}
+
+.pricing {
+  background: var(--white);
+  padding: 5rem 0;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.pricing__card {
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.pricing__card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--gray-600);
+}
+
+.pricing__label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-600);
+}
+
+.pricing__price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.pricing__price span {
+  font-size: 1rem;
+  color: var(--gray-600);
+}
+
+.pricing__card--highlight {
+  border: 2px solid var(--cyan-400);
+}
+
+.testimonials {
+  background: var(--gray-100);
+  padding: 5rem 0;
+}
+
+.testimonial__viewport {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial__track {
+  display: flex;
+  gap: 0;
+  transition: transform 0.3s ease;
+}
+
+.testimonial {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.testimonial__quote {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.testimonial__author {
+  color: var(--gray-600);
+  font-weight: 700;
+}
+
+.testimonial__controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.faq {
+  background: var(--gray-50);
+  padding: 5rem 0;
+}
+
+.faq__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq__item {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.faq__question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  font: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq__icon {
+  font-weight: 700;
+  color: var(--cyan-400);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  color: var(--gray-600);
+  transition: max-height 0.2s ease;
+}
+
+.faq__answer--open {
+  max-height: 200px;
+  margin-top: 0.5rem;
 }
 
 .features {
@@ -436,6 +598,86 @@ h3 {
   font-size: 0.95rem;
 }
 
+.contact__map {
+  margin: 1rem 0;
+  border-radius: 8px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(0, 195, 255, 0.2), rgba(0, 128, 96, 0.25));
+  border: 1px solid var(--gray-100);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal--open {
+  display: flex;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.modal__content {
+  position: relative;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: min(500px, 92vw);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal__form {
+  display: grid;
+  gap: 1rem;
+}
+
+[data-theme="dark"] {
+  --blue-950: #0f172a;
+  --gray-600: #cbd5e1;
+  --gray-100: #1e293b;
+  --gray-50: #0b1220;
+  --white: #0f172a;
+  background: var(--gray-50);
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] {
+  background: var(--gray-50);
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .site-header,
+[data-theme="dark"] .modal__content {
+  background: #111827;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .button--ghost {
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -474,6 +716,10 @@ h3 {
 
   .nav__cta {
     display: none;
+  }
+
+  .nav__actions {
+    margin-left: auto;
   }
 
   .nav__toggle {
