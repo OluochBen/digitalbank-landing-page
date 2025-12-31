@@ -127,6 +127,18 @@ h3 {
   width: 140px;
 }
 
+.logo--dark-bg {
+  display: none;
+}
+
+[data-theme="dark"] .logo--light-bg {
+  display: none;
+}
+
+[data-theme="dark"] .logo--dark-bg {
+  display: block;
+}
+
 .nav__links {
   display: flex;
   align-items: center;
